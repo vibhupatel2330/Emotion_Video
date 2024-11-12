@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Success</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Upload Successful!</h1>
+    <!-- Video Display Section -->
+    <video width="640" height="360" controls autoplay>
+        <source src="{{ url_for('static', filename='uploads/' + video_filename) }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Display Detected Emotion -->
+    <p>Detected Emotion: {{ emotion }}</p>
+
+    <!-- Buttons to Navigate -->
+    <div>
+        <a href="{{ url_for('home') }}" class="button">Home</a>
+        <a href="{{ url_for('home') }}" class="button">Upload Another Video</a>
+    </div>
+</body>
+</html>
